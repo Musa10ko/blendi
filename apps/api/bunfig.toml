@@ -1,0 +1,8 @@
+[test]
+preload = ["./src/test-setup.ts"]
+
+[build]
+target = "bun"
+entrypoints = ["./src/index.ts"]
+
+root = "."

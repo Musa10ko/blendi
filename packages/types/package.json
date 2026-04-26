@@ -1,0 +1,22 @@
+{
+  "name": "@blender/types",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "types": "index.ts",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+  "dev": "",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "typecheck": "tsc --noEmit"
+  }
+}
