@@ -29,7 +29,7 @@
   "compilerOptions": {
     "paths": {
       "@blender/types": ["../../packages/types"],
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     // Environment setup & latest features
     "lib": ["ESNext"],

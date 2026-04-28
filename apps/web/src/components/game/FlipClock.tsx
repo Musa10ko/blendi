@@ -1,4 +1,5 @@
-// apps/web/src/components/game/FlipClock.tsx
+// apps/mini-app/src/components/game/FlipClock.tsx
+
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -25,6 +26,7 @@ export function FlipClock() {
           minutes = 59
           hours--
         }
+        if (hours < 0) return { hours: 0, minutes: 0, seconds: 0 }
         return { hours, minutes, seconds }
       })
     }, 1000)
@@ -33,19 +35,19 @@ export function FlipClock() {
   }, [])
 
   const Digit = ({ value }: { value: number }) => (
-    <div className="bg-gray-900 dark:bg-gray-800 text-white text-4xl font-bold w-16 h-20 flex items-center justify-center rounded-lg shadow-lg">
+    <div className="bg-gray-900 dark:bg-gray-800 text-white text-3xl sm:text-4xl font-bold w-12 sm:w-16 h-16 sm:h-20 flex items-center justify-center rounded-lg shadow-lg border border-white/10">
       {String(value).padStart(2, '0')}
     </div>
   )
 
   return (
     <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 text-center">
-      <h3 className="text-sm text-gray-600 dark:text-gray-400 mb-4">Round ends in</h3>
-      <div className="flex justify-center items-center gap-2">
+      <h3 className="text-sm text-gray-600 dark:text-gray-400 mb-4">Раунд завершиться через</h3>
+      <div className="flex justify-center items-center gap-1 sm:gap-2">
         <Digit value={time.hours} />
-        <span className="text-3xl font-bold">:</span>
+        <span className="text-2xl sm:text-3xl font-bold">:</span>
         <Digit value={time.minutes} />
-        <span className="text-3xl font-bold">:</span>
+        <span className="text-2xl sm:text-3xl font-bold">:</span>
         <Digit value={time.seconds} />
       </div>
     </div>
